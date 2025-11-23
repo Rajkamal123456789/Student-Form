@@ -3,9 +3,7 @@ async function postCall(endPoint, data) {
   var myHeaders = new Headers();
   myHeaders.append("Accept", "application/json");
   myHeaders.append("Content-Type", "application/json");
-
   finalEndPoint = postCallPreProcess(endPoint);
-
   try {
     const response = await fetch(baseUrl + finalEndPoint, {
       method: "POST",
