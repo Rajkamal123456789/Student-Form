@@ -52,13 +52,7 @@ async function submitStudentData() {
             section:stuSection.value,
             activity:stuActivity.value
         }
-        console.log(data);
-        let response = await postCall(
-            "/student",
-            JSON.stringify(
-                data
-            )
-        );
+        let response = await postCall("/student",JSON.stringify(data));
         response = JSON.parse(response.body);
         if (response.success){
             alert(response.message);
@@ -82,12 +76,7 @@ async function retriveStudentData() {
             action:"retrive",
             regnumber:searchRegno.value
         }
-        let response = await postCall(
-            "/student",
-            JSON.stringify(
-                data
-            )
-        );
+        let response = await postCall("/student",JSON.stringify(data));
         response = JSON.parse(response.body);
         if(response.success){
             stuData = response.result.data;
